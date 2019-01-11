@@ -37,6 +37,7 @@ module.exports = {
       "node_modules"
     ]
   },
+  devtool: "nosources-source-map",
   optimization: {
     minimizer: [new UglifyJsPlugin({
       uglifyOptions: {
