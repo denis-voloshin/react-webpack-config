@@ -22,6 +22,9 @@ if (env.NODE_PATH) {
   nodePaths = env.NODE_PATH instanceof Array ? [...env.NODE_PATH] : [env.NODE_PATH];
 }
 
+// Global config
+const config = require(path.resolve(__dirname, "global.config.js"));
+
 // Webpack config
 module.exports = {
   mode: "production",
@@ -54,7 +57,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       inject: true,
       template: path.resolve(__dirname, "../public/index.html"),
-      title: env.siteTitle || "ReactJS Webpack",
+      title: config.siteTitle || "ReactJS Webpack",
       favicon: path.resolve(__dirname, "../public/favicon.ico"),
       minify: {
         removeComments: true,

@@ -22,6 +22,7 @@ This config supports only such project structure:
      babel.config.js
      env.dev.js
      env.prod.js
+     global.config.js
      webpack.config.dev.js
      webpack.config.prod.js
    /public
@@ -43,24 +44,36 @@ This config supports only such project structure:
 ## Features
 This config provide you `.js` and `.jsx` support, processing `.scss` and [PostCSS](https://postcss.org/), and file uploading.
 
-You can specify own environment variables in `env.js`, which will be created in `/config` folder on building if you do not create it by yourself.
+You can specify environment defaults in `env.prod.js` file for **production** and in `env.dev.js` for **development** in `/config` folder. After build file `env.js` will be created with environment defaults if was not created by yourself.
 
-Defaults for **production** file is in `env.prod.js`:
+File `/config/global.config.js` contains global config (such as site title).
+
+Default values are:
 ```javascript
 module.exports = {
-  siteTitle: "ReactJS Webpack"
-};
-```
-Defaults for **development** has the same option and two more for `webpack-dev-server` (`env.dev.js`):
-```javascript
-module.exports = {
+  // Site title to be injected to <title></title> tag in index.html
   siteTitle: "ReactJS Webpack",
+
+  // Auto open browser after starting Webpack development server
   autoOpenBrowser: true,
+
+  // Development server port
   devPort: 3000
 };
 ```
+If property(-ies) is not defined, the default value will be used.
 
 The [serve](https://www.npmjs.com/package/serve) package was included as well, which allows you simply serve your build by running
 ```
 serve -s ./dist
+```
+By default **production** will be served on **80**th port and **development** - on **8080**th one.
+
+You can modify it in `package.json` file in `scripts` section:
+```json5
+"scripts": {
+  // ...
+  "serve:prod": "yarn run build:prod && serve -s ./dist -l 80",
+  "serve:dev": "yarn run build:dev && serve -s ./dist -l 8080"
+}
 ```
