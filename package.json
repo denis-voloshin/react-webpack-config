@@ -13,6 +13,7 @@
     "serve:dev": "yarn run build:dev && serve -s ./dist -l 8080"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },

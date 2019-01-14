@@ -26,7 +26,7 @@ const config = require(path.resolve(__dirname, "global.config.js"));
 module.exports = {
   mode: "development",
   context: path.resolve(__dirname, "../src"),
-  entry: "./index.js",
+  entry: ["@babel/polyfill", "./index.js"],
   output: {
     path: path.resolve(__dirname, "../dist"),
     filename: "bundle.[hash:10].js"
