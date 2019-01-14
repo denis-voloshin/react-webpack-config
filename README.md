@@ -1,4 +1,6 @@
 # React Webpack
+![](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/3a4ik/react-webpack-config/master/package.json&label=version&query=$.version&colorB=blue)
+
 [Webpack](https://webpack.js.org/) configuration for building JSX [React](https://reactjs.org/) components into single bundle file.
 
 ## Installation
@@ -9,6 +11,7 @@ yarn install
 
 If you want to integrate webpack in existing project run
 ```
+yarn add react react-dom @babel/polyfill
 yarn add --dev @babel/core @babel/plugin-proposal-class-properties @babel/preset-env @babel/preset-react autoprefixer babel-loader clean-webpack-plugin css-loader cssnano extract-text-webpack-plugin@next file-loader html-webpack-plugin node-sass postcss-flexbugs-fixes postcss-loader sass-loader serve style-loader uglifyjs-webpack-plugin webpack webpack-cli webpack-dev-server
 ```
 
