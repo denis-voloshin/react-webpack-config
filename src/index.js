@@ -11,7 +11,7 @@ const App = () => (
     <h4>Works!</h4>
 
     <h5>Span component:</h5>
-    <Span className={styles["span-bg"]}>I am a component!</Span>
+    <Span className={styles.spanBg}>I am a component!</Span>
 
     <hr/>
 

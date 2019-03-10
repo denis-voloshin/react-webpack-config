@@ -100,6 +100,7 @@ module.exports = {
                   modules: true,
                   camelCase: true,
                   importLoaders: 1,
+                  sourceMap: true,
                   localIdentName: "[local]__[hash:5]"
                 }
               },
