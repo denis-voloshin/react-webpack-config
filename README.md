@@ -3,6 +3,9 @@
 
 [Webpack](https://webpack.js.org/) configuration for building JSX [React](https://reactjs.org/) components into single bundle file.
 
+## Deprecated
+This repository is deprecated. Use [react-sandbox](https://github.com/3a4ik/react-sandbox) instead.
+
 ## Installation
 Install all required dependencies using
 ```
